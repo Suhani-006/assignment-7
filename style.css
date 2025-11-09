@@ -1,0 +1,242 @@
+:root {
+  --bg: #030314;
+  --card: #0a0a1a;
+  --muted: #b0b6d4;
+  --accent: #7b5cff;
+  --glow: #00eaff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui;
+  background: radial-gradient(circle at 20% 30%, #090921, #030314 70%);
+  color: #e5e7f5;
+  line-height: 1.6;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(10, 10, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(123, 92, 255, 0.2), inset 0 0 15px rgba(0, 234, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title-small {
+  color: var(--muted);
+  letter-spacing: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 8px 0;
+  background: linear-gradient(90deg, var(--accent), var(--glow));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 25px rgba(123, 92, 255, 0.3);
+}
+
+.tagline {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+nav button.active,
+nav button:hover {
+  color: var(--glow);
+  text-shadow: 0 0 6px var(--glow);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(15, 15, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 0 15px rgba(123, 92, 255, 0.15);
+}
+
+.card h3 {
+  color: var(--glow);
+  text-shadow: 0 0 8px var(--glow);
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.skill {
+  margin-bottom: 14px;
+}
+
+.skill .label {
+  font-weight: 600;
+  color: #b9c5d0;
+  margin-bottom: 6px;
+}
+
+.skill .bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill .bar > i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--glow));
+  box-shadow: 0 0 10px var(--glow);
+  transition: width 1s ease;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.event {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 50, 0.5);
+  box-shadow: 0 0 10px rgba(123, 92, 255, 0.1);
+}
+
+.event strong {
+  color: var(--accent);
+}
+
+.event .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 880px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+/* ----- Creative Tools Section ----- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.tool {
+  background: rgba(15, 15, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  color: #e5e7f5;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 0 10px rgba(123, 92, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tool span {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.tool:hover {
+  box-shadow: 0 0 15px var(--glow);
+  color: var(--glow);
+  transform: translateY(-4px);
+}
+/* ----- Contact Section ----- */
+#contact p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.contact-grid a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #e5e7f5;
+  font-weight: 600;
+  background: rgba(15, 15, 35, 0.9);
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(123, 92, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-grid a span {
+  font-size: 22px;
+}
+
+.contact-grid a:hover {
+  box-shadow: 0 0 15px var(--glow);
+  color: var(--glow);
+  transform: translateY(-4px);
+}
